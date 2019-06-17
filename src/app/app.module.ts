@@ -10,9 +10,7 @@ import { MembreFormComponent } from './membre-form/membre-form.component';
   imports: [
     BrowserModule,
     // import HttpClientModule after BrowserModule.
-    HttpClientModule,
-  ],
-  declarations: [
+  
     AppComponent,
     MembreListComponent,
     MembreFormComponent
