@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Membre } from '../membre'; //model
-import { MembreService } from '../membre.service'; //service
 
 @Component({
 	selector: 'app-membre-list',
@@ -9,12 +8,10 @@ import { MembreService } from '../membre.service'; //service
 })
 export class MembreListComponent implements OnInit {
 	membres : Membre[];
-	constructor(private membreService : MembreService) { }
+	constructor() { }
 
 	ngOnInit() {
-		this.membreService.findAll().subscribe(data => {
-			this.membres = data;
-		});
+		
 	}
 
 }

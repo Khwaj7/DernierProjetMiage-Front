@@ -1,15 +1,17 @@
 <div class="wrapper fadeInDown">
   <h2>Login</h2>
   <div id="formContent">
-    <!-- Login Form -->
     <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" ngModel>
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password" ngModel>
-      <input type="submit" class="fadeIn fourth" value="Log In">
+      <input type="text" id="login"  name="login" placeholder="login" ngModel> <!-- class="fadeIn second" -->
+      <input type="password" id="password" name="password" placeholder="password" ngModel> <!-- class="fadeIn third" -->
+      <a routerLink="/randonnees" routerLinkActive="active">
+        <button class="btn btn-outline-secondary" type="submit" value="Log In">Se connecter</button>
+      </a>
     </form>
-    
-    <!-- Remind Passowrd -->
+
     <div id="formFooter">
+      <p>utilisateurConnecte : {{utilisateurConnecte}}</p>
+      <p *ngIf="utilisateurConnecte==0">Utilisateur inconnu !</p>
       <a class="underlineHover" href="#">S'inscrire ?</a>
     </div>
     
