@@ -7,4 +7,9 @@ export class Membre {
 	password : string;
 	licence : number;
 	niveau : number;
+
+	constructor(username: string, password: string){
+		this.username = username;
+		this.password = password;
+	}
 }
