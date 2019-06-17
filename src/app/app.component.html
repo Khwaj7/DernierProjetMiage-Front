@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card bg-dark my-5">
+        <div class="card-body" style="text-align: center;">
+          <img width="300" alt="Va Marcher Logo" src="assets/img/logo.png">
+          <ul class="text-center list-inline py-3">
+            <li class="list-inline-item, btn btn-info" (click)="onConnect()">Connexion</li>
+          </ul>
+        </div>
+        <div class="card-body" style="text-align: center;" *ngIf="clicConnexion==true">
+          <app-membre-form></app-membre-form>
+        </div>
+      </div>
+      <!--<router-outlet></router-outlet>-->
+    </div>
+  </div>
+</div>
