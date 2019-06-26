@@ -1,14 +1,23 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12 bg-dark">
+    <div class="bg-dark">
       <div class="card-body" style="text-align: center;">
         <img width="300" alt="Va Marcher Logo" src="assets/img/logo.png">
         <ul class="text-center list-inline py-3">
           <a routerLink="/connect" routerLinkActive="active">
             <li class="list-inline-item, btn btn-info">Connexion</li>
           </a>
-          <a routerLink="/randonnees" routerLinkActive="active">
+          <a routerLink="/randonnees" routerLinkActive="active" > <!-- *ngIf="utilisateurConnecte==1" -->
             <li class="list-inline-item, btn btn-info">Les randonnées</li>
+          </a>
+          <a routerLink="/mesRandonnees" routerLinkActive="active" > <!-- *ngIf="utilisateurConnecte==1" -->
+            <li class="list-inline-item, btn btn-info">Mes randonnées</li>
+          </a>
+          <a routerLink="/profil" routerLinkActive="active" > <!-- *ngIf="utilisateurConnecte==1" -->
+            <li class="list-inline-item, btn btn-info">Mon profil</li>
+          </a>
+          <a routerLink="/admin" routerLinkActive="active" > <!-- *ngIf="utilisateurConnecte==1" -->
+            <li class="list-inline-item, btn btn-info">Administration</li>
           </a>
         </ul>
         <router-outlet></router-outlet>

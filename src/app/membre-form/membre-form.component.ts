@@ -18,6 +18,7 @@ export class MembreFormComponent implements OnInit {
   router: any;
   constructor(private route: ActivatedRoute, router: Router, public rest:RestService) { 
     this.membre = new Membre("","");
+    this.router = router;
     //this.rest.getMembres();
   }
   
@@ -65,11 +66,12 @@ export class MembreFormComponent implements OnInit {
   connectOk(){
     console.log("unMembre trouvé à la soumission");
     this.utilisateurConnecte = 1;
-
-    
+    this.router.navigate(['/randonnees'], {relativeTo : this.route});
+    console.log("Router state : " + this.router.routerState);    
   }
   connectNOk(){
     console.log("membre introuvable à la soumission");
   }
   
 }
+ 

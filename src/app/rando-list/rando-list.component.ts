@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-rando-list',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rando-list.component.css']
 })
 export class RandoListComponent implements OnInit {
-
+  
   constructor() { }
-
+  
   ngOnInit() {
   }
-
+  
+  voter() {
+  }
+  
 }

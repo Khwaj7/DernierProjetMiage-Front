@@ -1,17 +1,17 @@
-<div class="wrapper fadeInDown">
+<div class="card bg-dark my-5 wrapper fadeInDown">
   <h2>Login</h2>
-  <div id="formContent">
+  <div id="formContent" class="card-body" style="text-align: center;color:white;">
     <form (ngSubmit)="onSubmit(f)" #f="ngForm">
       <input type="text" id="login"  name="login" placeholder="login" ngModel> <!-- class="fadeIn second" -->
       <input type="password" id="password" name="password" placeholder="password" ngModel> <!-- class="fadeIn third" -->
-      <a routerLink="/randonnees" routerLinkActive="active">
+      <!-- <a routerLink="/randonnees" routerLinkActive="active"> -->
         <button class="btn btn-outline-secondary" type="submit" value="Log In">Se connecter</button>
-      </a>
+      <!-- </a> -->
     </form>
 
     <div id="formFooter">
-      <p>utilisateurConnecte : {{utilisateurConnecte}}</p>
-      <p *ngIf="utilisateurConnecte==0">Utilisateur inconnu !</p>
+      <!-- <p>utilisateurConnecte : {{utilisateurConnecte}}</p> -->
+      <p *ngIf="utilisateurConnecte==0"><mark><strong>Utilisateur inconnu !</strong></mark></p>
       <a class="underlineHover" href="#">S'inscrire ?</a>
     </div>
     
