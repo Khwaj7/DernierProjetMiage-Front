@@ -6,19 +6,34 @@ import { AppComponent } from './app.component';
 import { MembreListComponent }  from './membre-list/membre-list.component';
 import { MembreFormComponent } from './membre-form/membre-form.component';
 import { RouterModule, Routes } from '@angular/router';
-import { Membre } from './membre';
+import { Membre } from './model/membre';
 import { LoginComponent} from './login/login.component';
 import { RandoListComponent } from './rando-list/rando-list.component';
+import { UserFormComponent } from './user-form/user-form.component';
+import { MembreInscriptionComponent } from './membre-inscription/membre-inscription.component';
 
 const appRoutes: Routes = [
+  { path: '', redirectTo: '/connect', pathMatch: 'full' },
   {
     path: 'connect',
-    component: LoginComponent
+    component: MembreFormComponent
   },
   {
     path: 'randonnees',
     component: RandoListComponent,
 
+  },
+  {
+    path: 'membres',
+    component: UserFormComponent,
+  },
+  {
+    path: 'admin',
+    component: MembreListComponent
+  },
+  {
+    path: 'inscrire',
+    component: MembreInscriptionComponent
   }
  /* {
     path: 'membres',
@@ -60,7 +75,9 @@ const appRoutes: Routes = [
     MembreListComponent,
     MembreFormComponent,
     LoginComponent,
-    RandoListComponent
+    RandoListComponent,
+    UserFormComponent,
+    MembreInscriptionComponent
   ],
   bootstrap: [ AppComponent ]
 })

@@ -1,20 +1,43 @@
 <div class="card my-5">
 	<div class="card-body">
-		<table class="table table-bordered table-striped">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col">#</th>
-					<th scope="col">Name</th>
-					<th scope="col">Email</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr *ngFor="let user of users">
-					<td>{{ user.id }}</td>
-					<td>{{ user.name }}</td>
-					<td><a href="mailto:{{ user.email }}">{{ user.email }}</a></td>
-				</tr>
-			</tbody>
-		</table>
+		<div id="formContent" class="card-body" style="text-align: center;color:black;">
+				<table class="table table-bordered table-striped">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Nom</th>
+							<th scope="col">Prenom</th>
+							<th scope="col">Login</th>
+							<th scope="col">Email</th>
+							<th scope="col">Licence</th>
+							<th scope="col">Niveau</th>
+							<th scope="col">Numéro</th>
+							<th scope="col">Rue</th>
+							<th scope="col">Ville</th>
+							<th scope="col">Pays</th>
+							<th scope="col">Promouvoir</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let user of this.membres">
+							<td>{{ user.id }}</td>
+							<td>{{ user.nomMembre }}</td>
+							<td>{{ user.prenomMembre }}</td>
+							<td>{{ user.login }}</td>
+							<td><a href="mailto:{{ user.mailMembre }}">{{ user.mailMembre }}</a></td>
+							<td>{{ user.numLicence }}</td>
+							<td>{{ user.niveau }}</td>
+							<td>{{ user.numero }}</td>
+							<td>{{ user.rue }}</td>
+							<td>{{ user.ville }}</td>
+							<td>{{ user.pays }}</td>
+							<td><button class="btn btn-outline-secondary" [disabled]="user.isTeamLeader" (click)="promote(user)">Team Leader</button></td>
+						</tr>
+					</tbody>
+				</table>
+			<a routerLink="/inscrire" routerLinkActive="active" > <!-- *ngIf="utilisateurConnecte==1" -->
+            <li class="list-inline-item, btn btn-info">Ajouter un nouveau membre</li>
+          </a>
+		</div>
 	</div>
 </div>
