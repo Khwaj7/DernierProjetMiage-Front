@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
+import { Membre } from '../model/membre'; //model
+import { RandoServiceService } from '../service/rando-service.service';
+import { Observable } from 'rxjs';
+import { FormControl } from '@angular/forms';
+import { tap, switchMap, elementAt } from 'rxjs/operators';
 
 @Component({
   selector: 'app-rando-list',
@@ -7,10 +11,19 @@ import { Http } from '@angular/http';
   styleUrls: ['./rando-list.component.css']
 })
 export class RandoListComponent implements OnInit {
+  private randonnees = [];
   
-  constructor() { }
+	constructor(private randoService: RandoServiceService) { }
   
   ngOnInit() {
+    console.log("test")
+    this.randonnees = [];
+    this.randoService.getRandonnees().subscribe( res => {
+      res.forEach(element => {
+				console.log(element);
+				this.randonnees.push(element);
+			});
+    });
   }
   
   voter() {
